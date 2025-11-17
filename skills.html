@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APlus.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+ 
+<body>
+
+   <!-- Navbar -->
+    <header class="header">
+        <a href="#" class="logo">APLUS.</a>
+        <i class="ri-menu-line menu-icon" id="menu-icon"></i>
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html" class="active">Skills</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contacts.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills-container" id="skills">
+        
+        <div class="skills-header">
+            <h2>My Skills</h2> 
+            <div class="underline"></div> 
+            <p> Technical expertise blended with creativity — explore my core competencies below.</p>
+        </div>
+
+        <div class="skills-stage" id="skills-stage-container">
+            
+            <!-- <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <span>Python</span>
+            </div> -->
+            <!-- <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                <span>C</span>
+            </div> -->
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                <span>C++</span>
+            </div>
+          <div class="skill-circle">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+    <span>GitHub</span>
+</div>
+
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <span>React</span>
+            </div>
+        <div class="skill-circle">
+    <img src="https://cdn-icons-png.flaticon.com/512/610/610120.png" alt="DSA">
+    <span>DSA</span>
+</div>
+
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <span>MongoDB</span>
+            </div>
+            <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <!-- <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                <span>TensorFlow</span>
+            </div> -->
+            <!-- <div class="skill-circle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                <span>PyTorch</span>
+            </div> -->
+            <!-- <div class="skill-circle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" alt="OpenCV">
+                <span>OpenCV</span>
+            </div> -->
+
+        </div>
+
+        <div class="skills-table">
+            
+            <div class="skills-row">
+                <div class="skill-box">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                      
+                        <li>javascript</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Web Technologies</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Databases & Tools</h3>
+                    <ul>
+                        <!-- <li>MySQL</li> -->
+                        <li>MongoDB</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <!-- <div class="skill-box">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>OpenCV</li>
+                    </ul>
+                </div> -->
+            </div>
+            
+            <div class="skills-row">
+                <div class="skill-box">
+                    <h3>Core Concepts</h3>
+                    <ul>
+                        <li>Data Structures & Algorithms</li>
+                        <li>AI basics</li>
+                        <li>Generative AI Basics</li>
+                       
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Creativity</li>
+                        <li>Adaptability</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Skills animation logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const stage = document.getElementById("skills-stage-container");
+            if (!stage) return;
+            
+            const circles = Array.from(stage.querySelectorAll(".skill-circle"));
+            const rect = stage.getBoundingClientRect();
+            const placed = [];
+
+            const isOverlapping = (x, y, size) =>
+                placed.some((p) => {
+                    const dx = p.x - x;
+                    const dy = p.y - y;
+                    return Math.sqrt(dx * dx + dy * dy) < p.size / 2 + size / 2 + 40;
+                });
+
+            circles.forEach((circle) => {
+                const size = circle.offsetWidth;
+                let x, y, tries = 0;
+                
+                do {
+                    x = Math.random() * (rect.width - size - 20);
+                    y = Math.random() * (rect.height - size - 20);
+                    tries++;
+                } while (isOverlapping(x, y, size) && tries < 150);
+
+                placed.push({ x, y, size });
+                circle.style.left = `${x}px`;
+                circle.style.top = `${y}px`;
+
+                const dx = (Math.random() - 0.5) * 100;
+                const dy = (Math.random() - 0.5) * 100;
+                
+                circle.animate(
+                    [{ transform: "translate(0, 0)" }, { transform: `translate(${dx}px, ${dy}px)` }],
+                    {
+                        duration: 5000 + Math.random() * 2000,
+                        direction: "alternate",
+                        iterations: Infinity,
+                        easing: "ease-in-out",
+                    }
+                );
+            });
+        });
+
+    
+       
+    </script>
+
+     <footer class="footer">
+        <p>Built by © <span>Anubhav Gupta</span></p>
+    </footer>
+
+
+</body>
+
+</html>

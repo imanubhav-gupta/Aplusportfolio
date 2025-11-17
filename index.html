@@ -3,46 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APlus.</title>
     <link rel="stylesheet" href="style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
     <header class="header">
         <a href="#" class="logo">APLUS.</a>
 
-        <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+        <i class="ri-menu-line menu-icon" id="menu-icon"></i>
 
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
+    
     <section class="home">
         <div class="home-content">
             <h1>Hi, I'm Anubhav Gupta</h1>
             <h3>Btech CSE Student</h3>
-            <p>I am pursuing BTech in Computer Science Engineering, with  knowledge of programming.  Alongside academics, I am specializing as a MERN stack developer, skilled in building responsive, dynamic, and modern web applications.</p>
+            <p>I am pursuing BTech in Computer Science Engineering, with knowledge of programming. Alongside academics, I am specializing as a MERN stack developer, skilled in building responsive, dynamic, and modern web applications.</p>
             <div class="btn-box">
-                <a href="#">Hire ME</a>
-                <a href="#">Let's talk</a>
+                <a href="#">Let's talk </a>
+                <a href="#">Download CV</a>
             </div>
         </div>
+        
         <div class="home-img">
-         <img src="IMG_20250313_113645-Photoroom.png" alt="">
+           <img src="IMG_20250313_113645-Photoroom.png" alt="">
         </div>
+        
         <div class="home-sci">
-            <a href="#"><i class="ri-github-fill"></i></a>
-            <a href="#"><i class="ri-linkedin-fill"></i></a>
-            <a href="#"><i class="ri-mail-fill"></i></i></a>
-            <a href="#"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://github.com/imanubhav-gupta" target="_blank">
+                <i class="ri-github-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/anubhav-gupta-4287a0351/" target="_blank">
+                <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="mailto:iamanubhav1318@gmail.com">
+                <i class="ri-mail-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/anubhav.gupta20/" target="_blank">
+                <i class="ri-instagram-fill"></i>
+            </a>
         </div>
-
     </section>
+
+    <footer class="footer">
+        <p>Built by © <span>Anubhav Gupta</span></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

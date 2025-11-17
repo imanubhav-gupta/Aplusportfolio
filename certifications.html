@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APlus.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="certifications.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+ 
+<body>
+
+   <!-- Navbar -->
+    <header class="header">
+        <a href="#" class="logo">APLUS.</a>
+        <i class="ri-menu-line menu-icon" id="menu-icon"></i>
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="certifications.html" class="active">Certifications</a>
+            <a href="contacts.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Certifications Section -->
+    <section class="certifications-container">
+        <div class="cert-header">
+            <h2>Certificates 🏅</h2>
+            <p>Explore my certifications-</p>
+        </div>
+
+        <!-- Tabs -->
+        <!-- <div class="tabs">
+            <button class="tab active" data-tab="tech">Tech</button>
+            <button class="tab" data-tab="other">Others</button>
+        </div> -->
+
+        <!-- Certificates Grid -->
+        <div class="certs-grid" id="certs-grid">
+            <!-- Tech Certificates -->
+            <div class="cert-card" data-category="tech">
+                <img src="Screenshot 2025-11-16 171204.png" alt="Flipkart Hackathon">
+                <div class="cert-content">
+                    <strong>Generative AI</strong>
+                    <div class="muted">Oracle University • 2025</div>
+                    <button class="btn-view" data-img="Screenshot 2025-11-16 171204.png">View</button>
+                </div>
+            </div>
+
+            <div class="cert-card" data-category="tech">
+                <img src="Screenshot 2025-11-16 171115.png" alt="Solution Challenge">
+                <div class="cert-content">
+                    <strong>AI Foundation</strong>
+                    <div class="muted">Oracle University • 2025</div>
+                    <button class="btn-view" data-img="Screenshot 2025-11-16 171115.png">View</button>
+                </div>
+            </div>
+
+            <!-- <div class="cert-card" data-category="tech">
+                <img src="/certs/adira.png" alt="ADira">
+                <div class="cert-content">
+                    <strong>ADira</strong>
+                    <div class="muted">SCET AI Club • 2025</div>
+                    <button class="btn-view" data-img="/certs/adira.png">View</button>
+                </div>
+            </div> -->
+
+            <!-- Other Certificates -->
+            <div class="cert-card" data-category="other" style="display: none;">
+                <img src="/certs/codathon.png" alt="Codathon">
+                <div class="cert-content">
+                    <strong>Codathon</strong>
+                    <div class="muted">SCET tech fest • 2025</div>
+                    <button class="btn-view" data-img="/certs/codathon.png">View</button>
+                </div>
+            </div>
+
+            <div class="cert-card" data-category="other" style="display: none;">
+                <img src="/certs/bugbuzz.png" alt="Bugbuzz">
+                <div class="cert-content">
+                    <strong>Bugbuzz</strong>
+                    <div class="muted">SCET tech fest • 2025</div>
+                    <button class="btn-view" data-img="/certs/bugbuzz.png">View</button>
+                </div>
+            </div>
+
+            <div class="cert-card" data-category="other" style="display: none;">
+                <img src="/certs/dataloom.png" alt="Dataloom">
+                <div class="cert-content">
+                    <strong>Dataloom</strong>
+                    <div class="muted">SCET • 2024</div>
+                    <button class="btn-view" data-img="/certs/dataloom.png">View</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Preview -->
+    <div class="modal" id="modal">
+        <img src="" alt="Certificate Preview" id="modal-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built by © <span>Anubhav Gupta</span></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Tab switching
+        const tabs = document.querySelectorAll('.tab');
+        const certCards = document.querySelectorAll('.cert-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const selectedTab = tab.getAttribute('data-tab');
+
+                // Show/hide certificates based on category
+                certCards.forEach(card => {
+                    if (card.getAttribute('data-category') === selectedTab) {
+                        card.style.display = 'block';
+                        // Add animation
+                        card.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const viewButtons = document.querySelectorAll('.btn-view');
+
+        viewButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const imgSrc = btn.getAttribute('data-img');
+                modalImg.src = imgSrc;
+                modal.style.display = 'flex';
+                modal.style.animation = 'fadeIn 0.3s ease';
+            });
+        });
+
+        // Close modal when clicking outside image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Animation keyframes added via JavaScript
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>

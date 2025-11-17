@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APlus.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <a href="#" class="logo">APLUS.</a>
+        <i class="ri-menu-line menu-icon" id="menu-icon"></i>
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h1 class="contact-title">Let's Connect & Collaborate 🤝</h1>
+
+            <p class="contact-subtitle">
+                Whether it's a new project, a collaboration, or just to say hi — I'd love to hear from you!
+            </p>
+
+            <!-- Quick Links / Social Icons -->
+            <div class="contact-links">
+
+                <a href="https://github.com/imanubhav-gupta" target="_blank" class="social-link">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"
+                        class="social-icon">
+                </a>
+
+                <a href="https://www.linkedin.com/in/anubhav-gupta-4287a0351/" target="_blank" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+                </a>
+
+                <a href="https://iamanubhav1318@gmail.com/" target="_blank" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="social-icon">
+                </a>
+
+                <a href="https://www.instagram.com/anubhav.gupta20/" target="_blank" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+                        class="social-icon">
+                </a>
+
+                <a href="https://leetcode.com/anubhav1820g" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                        alt="LeetCode" class="social-icon">
+                </a>
+
+
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" id="name" placeholder="Your Name" required />
+
+                <input type="text" name="contact" id="contact" placeholder="Your Email or Phone" required />
+
+                <input type="text" name="subject" id="subject" placeholder="Subject" required />
+
+                <textarea name="message" id="message" placeholder="Your Message..." rows="5" required></textarea>
+
+                <button type="submit" class="contact-btn">
+                    Send Message
+                </button>
+
+                <p class="contact-status" id="status"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built by © <span>Anubhav Gupta</span></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Initialize EmailJS
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+
+        // Contact form handling
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('status');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Validation
+            if (!name || !contact || !subject || !message) {
+                statusEl.textContent = "⚠️ Please fill in all fields.";
+                statusEl.style.color = "#ffa500";
+                return;
+            }
+
+            const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            const isEmail = emailPattern.test(contact);
+            if (!isEmail && isNaN(contact)) {
+                statusEl.textContent = "⚠️ Please enter a valid email or phone number.";
+                statusEl.style.color = "#ffa500";
+                return;
+            }
+
+            statusEl.textContent = "Sending...";
+            statusEl.style.color = "#00abf0";
+
+            // Send email using EmailJS
+            emailjs.send(
+                "YOUR_SERVICE_ID",      // Replace with your service ID
+                "YOUR_TEMPLATE_ID",     // Replace with your template ID
+                {
+                    from_name: name,
+                    contact_info: contact,
+                    subject: subject,
+                    message: message,
+                }
+            ).then(
+                function () {
+                    statusEl.textContent = "✅ Message sent successfully!";
+                    statusEl.style.color = "#00ff88";
+                    form.reset();
+                },
+                function (error) {
+                    console.error("FAILED...", error);
+                    statusEl.textContent = "❌ Failed to send. Try again later.";
+                    statusEl.style.color = "#ff4444";
+                }
+            );
+        });
+
+        // Social icons floating animation
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach((icon, index) => {
+            icon.style.animation = `float ${3 + index * 0.3}s ease-in-out infinite`;
+        });
+
+        // Add floating animation keyframes
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-8px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+
+</html>
